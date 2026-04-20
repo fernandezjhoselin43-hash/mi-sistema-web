@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Firma Digital</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1d2671, #c33764);
+            color: white;
+            text-align: center;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            margin: 80px auto;
+            padding: 30px;
+            border-radius: 20px;
+            width: 350px;
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            background-color: #00c9ff;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #009edb;
+        }
+
+        input {
+            margin: 10px 0;
+        }
+
+        hr {
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <!-- Imagen -->
+    <img src="/static/firma.png">
+
+    <h2>Sistema de Firma Digital</h2>
+
+    <!-- Generar -->
+    <a href="/generar">
+        <button>Generar Claves</button>
+    </a>
+
+    <hr>
+
+    <!-- Firmar -->
+    <h3>Firmar documento</h3>
+    <form action="/firmar" method="post" enctype="multipart/form-data">
+        <input type="file" name="archivo">
+        <br>
+        <button type="submit">Firmar</button>
+    </form>
+
+    <hr>
+
+    <!-- Verificar -->
+    <h3>Verificar firma</h3>
+    <form action="/verificar" method="post" enctype="multipart/form-data">
+        <input type="file" name="archivo">
+        <br>
+        <button type="submit">Verificar</button>
+    </form>
+
+</div>
+
+</body>
+</html>
